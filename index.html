@@ -2,151 +2,86 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>MAILY ✦ El Universo de Mazorca</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
+    <title>El Universo de Maily 🥸</title>
 
     <link rel="stylesheet" href="style.css">
-
 </head>
-
 
 <body>
 
-    <!-- =================================================
-         FONDO ESPACIAL
-    ================================================== -->
-
-    <div class="espacio"></div>
-
-    <div class="galaxia galaxia-1"></div>
-    <div class="galaxia galaxia-2"></div>
-    <div class="galaxia galaxia-3"></div>
-    <div class="galaxia galaxia-4"></div>
-
-    <div class="nebulosa nebulosa-1"></div>
-    <div class="nebulosa nebulosa-2"></div>
-    <div class="nebulosa nebulosa-3"></div>
-
-    <div class="estrellas"></div>
-    <div class="estrellas pequeñas"></div>
-
-    <div class="estrella-fugaz fugaz-1"></div>
-    <div class="estrella-fugaz fugaz-2"></div>
-    <div class="estrella-fugaz fugaz-3"></div>
-
-
-    <!-- =================================================
-         DECORACIÓN
-    ================================================== -->
-
-    <div class="luna luna-1">☾</div>
-    <div class="luna luna-2">☽</div>
-
-    <div class="planeta planeta-1"></div>
-    <div class="planeta planeta-2"></div>
-    <div class="planeta planeta-3"></div>
-
-    <div class="gatito gato-1">🐱</div>
-    <div class="gatito gato-2">🐈</div>
-    <div class="gatito gato-3">🐾</div>
-
-
-    <!-- =================================================
+    <!-- =====================================================
          MÚSICA
-    ================================================== -->
+    ====================================================== -->
 
-    <audio
-        id="musica"
-        loop
-        preload="auto"
-    >
-        <source
-            src="musica/cumpleaños.mp3"
-            type="audio/mpeg"
-        >
+    <audio id="musica" loop preload="auto">
+        <source src="musica/cumpleanos.mp3" type="audio/mpeg">
     </audio>
 
-    <div class="musica-control">
+
+    <div class="musica-control" id="reproductorMusica">
 
         <div class="musica-info">
+            <div class="musica-icono">♪</div>
 
-            <span class="musica-icono">
-                🎵
-            </span>
-
-            <div>
-
-                <strong>
-                    MAZORCA RADIO
-                </strong>
-
-                <span id="estadoMusica">
-                    música apagada
-                </span>
-
+            <div class="ecualizador">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-
         </div>
 
         <button
             class="boton-musica"
             id="botonMusica"
-            onclick="alternarMusica()"
-            aria-label="Reproducir música"
-        >
+            onclick="alternarMusica()">
             ▶
         </button>
 
     </div>
 
 
-    <!-- =================================================
+    <!-- =====================================================
+         DECORACIÓN ESPACIAL
+    ====================================================== -->
+
+    <div class="estrellas"></div>
+
+    <div class="estrella estrella-1">✦</div>
+    <div class="estrella estrella-2">✧</div>
+    <div class="estrella estrella-3">✦</div>
+    <div class="estrella estrella-4">✧</div>
+    <div class="estrella estrella-5">✦</div>
+
+    <div class="planeta planeta-1"></div>
+    <div class="planeta planeta-2"></div>
+    <div class="planeta planeta-3"></div>
+
+    <div class="luna">☾</div>
+
+
+    <!-- =====================================================
          PORTADA
-    ================================================== -->
+    ====================================================== -->
 
-    <header class="portada">
+    <section class="portada">
 
-        <div class="tarjeta-portada">
+        <div class="portada-contenido">
 
-            <div class="mini-planeta">
-                🪐
-            </div>
-
-            <p class="pequeno">
+            <p class="mini-titulo">
                 BIENVENIDO AL UNIVERSO DE
             </p>
 
-            <h1>
-                MAILY
-            </h1>
+            <h1>MAILY</h1>
 
-            <div class="estrellita">
+            <div class="decoracion-titulo">
                 ✦ · ✧ · ✦
             </div>
 
-            <div class="apodo">
-                / MAZORCA 🥸
-            </div>
+            <h2>/ MAZORCA 🥸</h2>
 
             <p class="fecha">
                 05 · 11 · 2008
@@ -154,71 +89,62 @@
 
             <p class="descripcion-portada">
                 Un pequeño universo lleno de estrellas,
-                galaxias, gatos, recuerdos y un poquito
-                de caos.
+                galaxias, gatos, recuerdos y un poquito de caos.
             </p>
 
-            <button onclick="entrarAlUniverso()">
+            <button
+                class="boton-principal"
+                onclick="entrarAlUniverso()">
                 explorar el universo ✦
             </button>
 
-            <div class="scroll-indicator">
-                ↓
-            </div>
-
         </div>
 
-    </header>
+    </section>
 
 
-    <!-- =================================================
-         CONTENIDO
-    ================================================== -->
+    <!-- =====================================================
+         HISTORIA
+    ====================================================== -->
 
     <main id="historia">
-
 
         <!-- =================================================
              PRESENTACIÓN
         ================================================== -->
 
-        <section class="presentacion">
-
-            <div class="galaxia-mini"></div>
+        <section class="seccion presentacion">
 
             <p class="etiqueta">
-                ✦ TRANSMISIÓN INTERGALÁCTICA ✦
+                ARCHIVO #05112008
             </p>
 
-            <h2>
-                Conociendo a
-                <span>MAILY</span>
+            <h2 class="titulo-seccion">
+                Conociendo a MAILY
             </h2>
 
-            <p class="texto-presentacion">
-                En algún lugar entre millones de estrellas,
-                planetas y galaxias, existe un universo
-                bastante especial.
+            <p class="subtitulo-seccion">
+                ES MAZORCA 🥸
             </p>
 
-            <div class="mensaje-apodo">
+            <div class="presentacion-caja">
 
-                <span>
-                    Pero quienes la conocen de verdad
-                    saben que...
-                </span>
+                <p>
+                    Una persona que llegó a mi vida y terminó
+                    convirtiéndose en alguien demasiado importante.
+                </p>
 
-                <strong>
-                    ES MAZORCA 🥸
-                </strong>
+                <p>
+                    Entre risas, momentos random, conversaciones
+                    interminables y recuerdos que probablemente
+                    no deberían existir...
+                </p>
+
+                <p>
+                    nació este pequeño universo.
+                </p>
 
             </div>
-
-            <p class="texto-presentacion">
-                Este pequeño espacio guarda algunos
-                fragmentos de ese universo: momentos,
-                fotos, risas y recuerdos.
-            </p>
 
         </section>
 
@@ -227,179 +153,125 @@
              CARTA
         ================================================== -->
 
-        <section class="carta-seccion" id="carta">
+        <section class="seccion carta-seccion" id="carta">
 
-            <div class="carta-contenedor">
+            <p class="etiqueta">
+                MENSAJE PRIVADO
+            </p>
 
-                <p class="etiqueta">
-                    ✦ MENSAJE ESPECIAL ✦
-                </p>
-
-                <h2>
-                    Una carta para
-                    <span>MAZORCA</span> 🥸
-                </h2>
-
-                <p class="carta-intro">
-                    Porque una felicitación normal claramente
-                    no era suficiente.
-                </p>
+            <h2 class="titulo-seccion">
+                Una carta para Mazorca
+            </h2>
 
 
-                <div class="sobre" id="sobre">
+            <div class="sobre">
 
-                    <div class="sobre-tapa"></div>
+                <div class="sobre-tapa"></div>
 
-                    <div class="sobre-frente">
+                <div class="sobre-cuerpo">
 
-                        <div class="sello">
-                            🥸
-                        </div>
-
-                        <p>
-                            PARA:
-                        </p>
-
-                        <h3>
-                            MAILY
-                        </h3>
-
-                        <span>
-                            05 · 11 · 2008
-                        </span>
-
+                    <div class="sello">
+                        ✦
                     </div>
-
-                    <button
-                        class="boton-carta"
-                        onclick="abrirCarta()"
-                    >
-                        abrir carta 🥸
-                    </button>
 
                 </div>
 
+            </div>
 
-                <div
-                    class="carta-interior"
-                    id="cartaInterior"
-                >
 
-                    <div class="papel-carta">
+            <button
+                class="boton-carta"
+                onclick="abrirCarta()">
+                abrir carta ✉
+            </button>
 
-                        <div class="papel-estrellas">
-                            ✦ · ✧ · ✦
-                        </div>
 
-                        <p class="saludo-carta">
-                            Para Mazorca 🥸
-                        </p>
+            <div
+                class="carta-interior"
+                id="cartaInterior">
 
-                        <p>
-                            Bueno... llegó tu cumpleaños.
-                        </p>
+                <div class="papel-carta">
 
-                        <p>
-                            Felicidades, oficialmente eres un año
-                            más vieja. 🥳
-                            No te preocupes, todavía no estás tan
-                            vieja... creo.
-                        </p>
+                    <div class="adorno-carta">
+                        ✦ · ✧ · ✦
+                    </div>
 
-                        <p>
-                            La verdad no sé qué escribir porque
-                            podría poner algo súper bonito,
-                            pero no queremos que esto sea cursi🥸
-                        </p>
+                    <p class="destinatario">
+                        Para Mazorca 🥸
+                    </p>
 
-                        <p>
-                            Así que simplemente diré:
-                        </p>
+                    <p>
+                        Bueno... llegó tu cumpleaños.
+                    </p>
 
-                        <p>
-                            Gracias por todas las risas, los momentos
-                            random, las conversaciones que probablemente
-                            no deberían existir y todas esas cosas que
-                            hacen que nuestra amistad sea tan especial y unico.
-                        </p>
+                    <p>
+                        Felicidades, oficialmente eres un año más vieja. 🥳
+                        No te preocupes, todavía no estás tan vieja...
+                        creo.
+                    </p>
 
-                        <p>
-                            Espero que este nuevo año tengas muchos
-                            momentos bonitos, que cumplas tus metas,
-                            que te pasen cosas buenas y que sigas
-                            siendo igual de loca, porque si cambias
-                            demasiado ya no sabríamos qué hacer contigo.
-                        </p>
+                    <p>
+                        La verdad no sé qué escribir porque podría poner
+                        algo súper bonito, pero no queremos que esto sea
+                        cursi 🥸.
+                    </p>
 
-                        <p>
-                            También espero que tengas:
-                        </p>
+                    <p>
+                        Gracias por todas las risas, los momentos random,
+                        las conversaciones que probablemente no deberían
+                        existir y todas esas cosas que hacen que nuestra
+                        amistad sea tan especial y única.
+                    </p>
 
-                        <div class="lista-carta">
+                    <p>
+                        Espero que este nuevo año tengas muchos momentos
+                        bonitos y que puedas cumplir todo lo que te
+                        propongas.
+                    </p>
 
-                            🐱 muchos gatos<br>
-                            ⭐ muchas estrellas<br>
-                            😂 muchas risas<br>
+                    <ul class="lista-carta">
 
-                        </div>
+                        <li>🐱 muchos gatos</li>
+                        <li>⭐ muchas estrellas</li>
+                        <li>😂 muchas risas</li>
 
-                        <p>
-                            Sabes que te quiero un monton
-                            y siempre podras contar conmigo.
-                        </p>
+                    </ul>
 
-                        <p>
-                            Hemos pasado un monton de cosas, eres una persona
-                            obviamente JAJAJAJA, no eres un extraterrestre
-                        </p>
+                    <p>
+                        Sabes que te quiero un montón y siempre podrás
+                        contar conmigo.
+                    </p>
 
-                        <div class="frase-carta">
-                            “Espero que tu dedo meñique crezca”
-                        </div>
+                    <p>
+                        Hemos pasado un montón de cosas, eres una persona
+                        obviamente JAJAJAJA, no eres un extraterrestre.
+                    </p>
 
-                        <p>
-                            Eres una persona importante para mi
-                        </p>
+                    <div class="frase-carta">
 
-                        <p>
-                            En fin, fuera de todas las tonterías...
-                        </p>
+                        <span>“Espero que tu dedo meñique crezca”</span>
 
-                        <p>
-                            Espero que este año sea bonito para ti
-                            y que podamos seguir acumulando recuerdos,
-                            fotos y momentos que después nos den
-                            vergüenza recordar.
-                        </p>
+                    </div>
+
+                    <p>
+                        Eres una persona importante para mí y me alegra
+                        muchísimo haber compartido tantos momentos contigo.
+                    </p>
+
+                    <div class="final-carta">
+
+                        <h3>
+                            FELIZ CUMPLEAÑOS, VIEJA. 🎂
+                        </h3>
 
                         <p>
-                            Gracias por ser tú, Mazorca.
+                            Atentamente,<br>
+                            tu persona random de confianza
                         </p>
 
-                        <div class="final-carta">
-
-                            <strong>
-                                Y ahora sí, antes de que esto
-                                se ponga demasiado sentimental:
-                            </strong>
-
-                            <br><br>
-
-                            <span>
-                                FELIZ CUMPLEAÑOS, VIEJA.🎂
-                            </span>
-
-                        </div>
-
-                        <div class="firma-carta">
-
-                            Atentamente, tu persona random de confianza
-
-                            <strong>
-                                P.D.: Me alegra demasiado haberte conocido
-                            </strong>
-
-                        </div>
+                        <small>
+                            P.D.: Me alegra demasiado haberte conocido.
+                        </small>
 
                     </div>
 
@@ -414,233 +286,61 @@
              GALERÍA
         ================================================== -->
 
-        <section class="galeria">
+        <section class="seccion galeria-seccion">
 
-            <div class="titulo-seccion">
+            <p class="etiqueta">
+                RECUERDOS
+            </p>
 
-                <span>
-                    ✦ ✧ ✦
-                </span>
+            <h2 class="titulo-seccion">
+                Fragmentos de nuestro universo
+            </h2>
 
-                <h2>
-                    Fragmentos del<br>
-                    universo de Maily
-                </h2>
+            <div class="galeria">
 
-                <p>
-                    seis recuerdos flotando entre las estrellas
-                </p>
-
-            </div>
-
-
-            <article class="foto-card foto-uno">
-
-                <div class="numero">
-                    01
-                </div>
-
-                <div class="orbita-foto"></div>
-
-                <div class="marco-circular">
-
+                <div class="foto-card">
                     <img
                         src="fotos/foto1.jpeg"
-                        alt="Foto 1 de Maily"
-                        onclick="abrirFoto(this)"
-                    >
-
+                        alt="Recuerdo 1"
+                        onclick="abrirFoto(this)">
                 </div>
 
-                <div class="texto-foto">
-
-                    <span>
-                        FRAGMENTO #01
-                    </span>
-
-                    <h3>
-                        Una pequeña estrella ✦
-                    </h3>
-
-                    <p>
-                        Flotando por algún lugar
-                        de esta galaxia.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="foto-card foto-dos">
-
-                <div class="gatito-card">
-                    🐱
-                </div>
-
-                <div class="polaroid">
-
-                    <div class="polaroid-estrellas">
-                        ✦ ✧ ✦
-                    </div>
-
+                <div class="foto-card">
                     <img
                         src="fotos/foto2.jpeg"
-                        alt="Foto 2 de Maily"
-                        onclick="abrirFoto(this)"
-                    >
-
-                    <p>
-                        Maily siendo Maily.
-                    </p>
-
+                        alt="Recuerdo 2"
+                        onclick="abrirFoto(this)">
                 </div>
 
-                <div class="estrella-card">
-                    ✨
-                </div>
-
-                <div class="planeta-card">
-                    🪐
-                </div>
-
-            </article>
-
-
-            <article class="foto-card foto-tres">
-
-                <div class="constelacion">
-                    <span>✦</span>
-                    <span>·</span>
-                    <span>✦</span>
-                    <span>·</span>
-                    <span>✧</span>
-                </div>
-
-                <div class="foto-galaxia-fondo"></div>
-
-                <div class="foto-grande">
-
+                <div class="foto-card">
                     <img
                         src="fotos/foto3.jpeg"
-                        alt="Foto 3 de Maily"
-                        onclick="abrirFoto(this)"
-                    >
-
+                        alt="Recuerdo 3"
+                        onclick="abrirFoto(this)">
                 </div>
 
-                <div class="texto-foto derecha">
-
-                    <span>
-                        FRAGMENTO #03
-                    </span>
-
-                    <h3>
-                        Somewhere among the stars
-                    </h3>
-
-                </div>
-
-            </article>
-
-
-            <article class="foto-card foto-cuatro">
-
-                <div class="galaxia-anillo"></div>
-
-                <div class="marco-gato">
-
-                    <div class="oreja izquierda"></div>
-                    <div class="oreja derecha"></div>
-
+                <div class="foto-card">
                     <img
                         src="fotos/foto4.jpeg"
-                        alt="Foto 4 de Maily"
-                        onclick="abrirFoto(this)"
-                    >
-
+                        alt="Recuerdo 4"
+                        onclick="abrirFoto(this)">
                 </div>
 
-                <div class="etiqueta-gato">
-                    CAT APPROVED ✓
-                </div>
-
-            </article>
-
-
-            <article class="foto-card foto-cinco">
-
-                <div class="caos-decorativo">
-                    ✦ · ✧ · 🌽 · ✦ · 🐱 · ✧
-                </div>
-
-                <div class="foto-caos">
-
+                <div class="foto-card">
                     <img
                         src="fotos/foto5.jpeg"
-                        alt="Foto 5 de Maily"
-                        onclick="abrirFoto(this)"
-                    >
-
-                    <div class="sticker sticker-1">
-                        WOW
-                    </div>
-
-                    <div class="sticker sticker-2">
-                        🌽
-                    </div>
-
-                    <div class="sticker sticker-3">
-                        ✦
-                    </div>
-
+                        alt="Recuerdo 5"
+                        onclick="abrirFoto(this)">
                 </div>
 
-                <p class="caption-caos">
-                    MAZORCA DETECTADA.
-                </p>
-
-            </article>
-
-
-            <article class="foto-card foto-seis">
-
-                <div class="final-marco">
-
+                <div class="foto-card">
                     <img
                         src="fotos/foto6.png"
-                        alt="Foto 6 de Maily"
-                        onclick="abrirFoto(this)"
-                    >
-
-                    <div class="brillo">
-                        ✦
-                    </div>
-
-                    <div class="brillo segundo">
-                        ✧
-                    </div>
-
+                        alt="Recuerdo 6"
+                        onclick="abrirFoto(this)">
                 </div>
 
-                <div class="final-texto">
-
-                    <span>
-                        FRAGMENTO #06
-                    </span>
-
-                    <h3>
-                        Y este universo...
-                    </h3>
-
-                    <p>
-                        todavía tiene muchas historias
-                        por escribir.
-                    </p>
-
-                </div>
-
-            </article>
+            </div>
 
         </section>
 
@@ -649,89 +349,36 @@
              MENSAJE FINAL
         ================================================== -->
 
-        <section class="mensaje">
-
-            <div class="mensaje-galaxia"></div>
+        <section class="seccion mensaje-final">
 
             <div class="mensaje-caja">
 
-                <div class="mini-estrellas">
+                <div class="estrellas-mensaje">
                     ✦ ✧ ✦
                 </div>
 
-                <p class="etiqueta">
-                    MENSAJE PARA MAILY
-                </p>
-
                 <h2>
-                    Feliz cumpleaños,
-                    <span>Maily</span> 💙
+                    FIN DEL UNIVERSO...
                 </h2>
 
                 <p>
-                    Espero que este nuevo año de tu vida
-                    esté lleno de momentos bonitos,
-                    aventuras, risas y recuerdos que
-                    algún día puedas mirar y decir:
-                    "qué buenos tiempos".
+                    ...o quizá solo el comienzo de muchos
+                    recuerdos más.
                 </p>
 
-                <p>
-                    Que nunca te falten personas que
-                    hagan tus días más bonitos y razones
-                    para seguir brillando a tu manera.
+                <div class="mensaje-grande">
+                    Feliz cumpleaños, Maily 🥸
+                </div>
+
+                <p class="ultimo-mensaje">
+                    Que nunca te falten estrellas,
+                    gatos y personas que te quieran mucho.
                 </p>
 
-                <div class="firma">
-
-                    Con cariño para
-
-                    <strong>
-                        MAZORCA 🥸
-                    </strong>
-
+                <div class="estrellas-mensaje">
+                    ✧ ✦ ✧
                 </div>
 
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             FINAL
-        ================================================== -->
-
-        <section class="final">
-
-            <div class="universo-final">
-
-                <div class="galaxia-final-fondo"></div>
-
-                <div class="final-luna">
-                    ☾
-                </div>
-
-                <div class="final-planeta">
-                    🪐
-                </div>
-
-            </div>
-
-            <p>
-                FIN DE LA TRANSMISIÓN
-            </p>
-
-            <h2>
-                El universo de Maily
-                continúa...
-            </h2>
-
-            <div class="fecha-final">
-                05 · 11 · 2008
-            </div>
-
-            <div class="despedida">
-                Feliz cumpleaños, Maily✨
             </div>
 
         </section>
@@ -739,27 +386,24 @@
     </main>
 
 
-    <!-- =================================================
+    <!-- =====================================================
          VISOR DE FOTOS
-    ================================================== -->
+    ====================================================== -->
 
     <div
         class="visor"
-        id="visor"
-    >
+        id="visor">
 
         <button
-            class="cerrar"
-            onclick="cerrarFoto()"
-        >
+            class="cerrar-visor"
+            onclick="cerrarFoto()">
             ×
         </button>
 
         <img
             id="fotoGrande"
             src=""
-            alt="Foto ampliada"
-        >
+            alt="Foto ampliada">
 
     </div>
 
