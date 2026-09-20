@@ -1,0 +1,1620 @@
+/* =====================================================
+   UNIVERSO DE MAILY
+   MAZORCA 🥸
+===================================================== */
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: #070719;
+    color: #ffffff;
+    font-family: "Baloo 2", sans-serif;
+}
+
+button {
+    font-family: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =====================================================
+   FONDO ESPACIAL
+===================================================== */
+
+.espacio {
+    position: fixed;
+    inset: 0;
+    z-index: -20;
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            #17164b 0%,
+            #0b0b29 38%,
+            #050511 100%
+        );
+}
+
+
+/* =====================================================
+   GALAXIAS
+===================================================== */
+
+.galaxia {
+    position: fixed;
+    z-index: -15;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(18px);
+    opacity: 0.35;
+}
+
+.galaxia-1 {
+    width: 520px;
+    height: 220px;
+    top: 8%;
+    left: -180px;
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(108, 71, 255, 0.65),
+            transparent 70%
+        );
+    transform: rotate(-20deg);
+}
+
+.galaxia-2 {
+    width: 550px;
+    height: 240px;
+    top: 40%;
+    right: -220px;
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(43, 124, 255, 0.5),
+            transparent 70%
+        );
+    transform: rotate(25deg);
+}
+
+.galaxia-3 {
+    width: 500px;
+    height: 220px;
+    top: 68%;
+    left: -180px;
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(213, 67, 255, 0.42),
+            transparent 70%
+        );
+    transform: rotate(15deg);
+}
+
+.galaxia-4 {
+    width: 500px;
+    height: 220px;
+    bottom: 5%;
+    right: -200px;
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255, 92, 184, 0.3),
+            transparent 70%
+        );
+}
+
+
+/* =====================================================
+   NEBULOSAS
+===================================================== */
+
+.nebulosa {
+    position: fixed;
+    z-index: -16;
+    pointer-events: none;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.16;
+}
+
+.nebulosa-1 {
+    width: 300px;
+    height: 300px;
+    top: 25%;
+    left: 20%;
+    background: #5d46ff;
+}
+
+.nebulosa-2 {
+    width: 350px;
+    height: 350px;
+    top: 55%;
+    right: 10%;
+    background: #e93b9e;
+}
+
+.nebulosa-3 {
+    width: 250px;
+    height: 250px;
+    bottom: 10%;
+    left: 40%;
+    background: #319cff;
+}
+
+
+/* =====================================================
+   ESTRELLAS
+===================================================== */
+
+.estrellas {
+    position: fixed;
+    inset: 0;
+    z-index: -10;
+    pointer-events: none;
+    opacity: 0.8;
+    background-image:
+        radial-gradient(circle, white 1px, transparent 1.5px),
+        radial-gradient(circle, rgba(255,255,255,.8) 1px, transparent 1.5px),
+        radial-gradient(circle, rgba(255,207,74,.8) 1px, transparent 1.5px);
+    background-size:
+        95px 110px,
+        145px 160px,
+        210px 190px;
+    background-position:
+        10px 20px,
+        40px 70px,
+        80px 30px;
+}
+
+.estrellas.pequeñas {
+    opacity: 0.35;
+    background-size:
+        55px 65px,
+        80px 90px,
+        120px 130px;
+}
+
+
+/* =====================================================
+   ESTRELLAS FUGACES
+===================================================== */
+
+.estrella-fugaz {
+    position: fixed;
+    z-index: -8;
+    width: 90px;
+    height: 2px;
+    border-radius: 50%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        white,
+        transparent
+    );
+    opacity: 0;
+    transform: rotate(-35deg);
+    pointer-events: none;
+}
+
+.fugaz-1 {
+    top: 18%;
+    left: 15%;
+    animation: fugaz 6s linear infinite;
+}
+
+.fugaz-2 {
+    top: 48%;
+    right: 20%;
+    animation: fugaz 8s linear 2s infinite;
+}
+
+.fugaz-3 {
+    top: 75%;
+    left: 45%;
+    animation: fugaz 9s linear 4s infinite;
+}
+
+@keyframes fugaz {
+
+    0% {
+        opacity: 0;
+        transform: translate(0, 0) rotate(-35deg);
+    }
+
+    10% {
+        opacity: 0.9;
+    }
+
+    25% {
+        opacity: 0;
+        transform: translate(180px, 130px) rotate(-35deg);
+    }
+
+    100% {
+        opacity: 0;
+    }
+
+}
+
+
+/* =====================================================
+   LUNAS
+===================================================== */
+
+.luna {
+    position: fixed;
+    z-index: -5;
+    color: rgba(255, 255, 255, 0.22);
+    font-family: serif;
+    pointer-events: none;
+}
+
+.luna-1 {
+    top: 12%;
+    right: 8%;
+    font-size: 75px;
+}
+
+.luna-2 {
+    bottom: 16%;
+    left: 8%;
+    font-size: 55px;
+}
+
+
+/* =====================================================
+   PLANETAS
+===================================================== */
+
+.planeta {
+    position: fixed;
+    z-index: -4;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: transform 0.2s ease-out;
+}
+
+.planeta-1 {
+    width: 65px;
+    height: 65px;
+    top: 28%;
+    right: 12%;
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #ffb4dc,
+            #8e55d9 55%,
+            #40277a
+        );
+    box-shadow: 0 0 35px rgba(164, 100, 255, 0.35);
+}
+
+.planeta-2 {
+    width: 42px;
+    height: 42px;
+    top: 63%;
+    left: 9%;
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            #8feaff,
+            #3674cc 65%,
+            #173263
+        );
+}
+
+.planeta-3 {
+    width: 28px;
+    height: 28px;
+    bottom: 28%;
+    right: 20%;
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            #ffe17a,
+            #c66a43
+        );
+}
+
+
+/* =====================================================
+   GATITOS
+===================================================== */
+
+.gatito {
+    position: fixed;
+    z-index: -3;
+    pointer-events: none;
+    opacity: 0.65;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,.12));
+}
+
+.gato-1 {
+    top: 34%;
+    left: 5%;
+    font-size: 35px;
+    transform: rotate(-12deg);
+}
+
+.gato-2 {
+    top: 70%;
+    right: 5%;
+    font-size: 40px;
+    transform: rotate(12deg);
+}
+
+.gato-3 {
+    bottom: 8%;
+    left: 20%;
+    font-size: 25px;
+}
+
+
+/* =====================================================
+   MÚSICA — MAZORCA RADIO
+===================================================== */
+
+.musica-control {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 900;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px 10px 15px;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 50px;
+    background: rgba(13, 12, 42, .78);
+    backdrop-filter: blur(14px);
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.35),
+        0 0 25px rgba(117,101,255,.18);
+}
+
+.musica-info {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.musica-icono {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(117,101,255,.16);
+    font-size: 18px;
+}
+
+.musica-info div {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.05;
+}
+
+.musica-info strong {
+    font-family: "Fredoka", sans-serif;
+    font-size: .7rem;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.musica-info span {
+    margin-top: 3px;
+    font-size: .65rem;
+    color: rgba(255,255,255,.48);
+}
+
+.boton-musica {
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background: #7565ff;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s ease;
+    box-shadow: 0 5px 18px rgba(117,101,255,.35);
+}
+
+.boton-musica:hover {
+    transform: scale(1.08);
+    box-shadow: 0 7px 22px rgba(117,101,255,.5);
+}
+
+.musica-control.reproduciendo .musica-icono {
+    animation: notaMusical 1s ease-in-out infinite;
+}
+
+@keyframes notaMusical {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-3px) rotate(-8deg);
+    }
+
+}
+
+
+/* =====================================================
+   PORTADA
+===================================================== */
+
+.portada {
+    min-height: 100vh;
+    width: 100%;
+    padding: 40px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.tarjeta-portada {
+    width: min(720px, 100%);
+    padding: 60px 30px;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 35px;
+    background: rgba(9, 9, 32, 0.52);
+    backdrop-filter: blur(12px);
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.4),
+        0 0 50px rgba(107,79,255,.12);
+}
+
+.mini-planeta {
+    font-size: 48px;
+    margin-bottom: 15px;
+    animation: flotar 4s ease-in-out infinite;
+}
+
+@keyframes flotar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+.pequeno {
+    font-size: .8rem;
+    letter-spacing: 5px;
+    color: rgba(255,255,255,.6);
+}
+
+.tarjeta-portada h1 {
+    margin: 10px 0 0;
+    font-family: "Fredoka", sans-serif;
+    font-size: clamp(4rem, 13vw, 8rem);
+    line-height: .9;
+    letter-spacing: 4px;
+    color: #ffffff;
+    text-shadow:
+        0 0 25px rgba(126, 106, 255, .5);
+}
+
+.estrellita {
+    margin: 25px 0 15px;
+    color: #ffcf4a;
+    letter-spacing: 10px;
+}
+
+.apodo {
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 30px;
+    background: rgba(255,207,74,.1);
+    border: 1px solid rgba(255,207,74,.25);
+    color: #ffcf4a;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.fecha {
+    margin-top: 15px;
+    color: rgba(255,255,255,.5);
+    letter-spacing: 4px;
+}
+
+.descripcion-portada {
+    max-width: 500px;
+    margin: 25px auto;
+    color: rgba(255,255,255,.7);
+    line-height: 1.7;
+}
+
+.tarjeta-portada button {
+    margin-top: 10px;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 30px;
+    background: #7565ff;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(117,101,255,.25);
+    transition: .3s ease;
+}
+
+.tarjeta-portada button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(117,101,255,.4);
+}
+
+.scroll-indicator {
+    margin-top: 35px;
+    color: rgba(255,255,255,.35);
+    font-size: 25px;
+    animation: bajar 1.5s ease-in-out infinite;
+}
+
+@keyframes bajar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+
+}
+
+
+/* =====================================================
+   PRESENTACIÓN
+===================================================== */
+
+.presentacion {
+    position: relative;
+    width: min(850px, calc(100% - 40px));
+    margin: auto;
+    padding: 110px 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1s ease;
+}
+
+.presentacion.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.etiqueta {
+    font-size: .75rem;
+    letter-spacing: 4px;
+    color: #8e82ff;
+}
+
+.presentacion h2,
+.titulo-seccion h2,
+.mensaje-caja h2,
+.carta-contenedor h2 {
+    margin: 15px 0;
+    font-family: "Fredoka", sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.presentacion h2 span,
+.mensaje-caja h2 span {
+    color: #78bfff;
+}
+
+.texto-presentacion {
+    max-width: 620px;
+    margin: 20px auto;
+    color: rgba(255,255,255,.7);
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.mensaje-apodo {
+    width: min(550px, 100%);
+    margin: 35px auto;
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(113,92,255,.09);
+    border: 1px solid rgba(113,92,255,.2);
+}
+
+.mensaje-apodo span {
+    display: block;
+    color: rgba(255,255,255,.6);
+}
+
+.mensaje-apodo strong {
+    display: block;
+    margin-top: 8px;
+    color: #ffcf4a;
+    font-size: 1.35rem;
+}
+
+
+/* =====================================================
+   CARTA
+===================================================== */
+
+.carta-seccion {
+    position: relative;
+    width: 100%;
+    padding: 110px 20px 130px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.carta-contenedor {
+    width: min(850px, 100%);
+    position: relative;
+    z-index: 2;
+}
+
+.carta-contenedor h2 span {
+    color: #ffcf4a;
+}
+
+.carta-intro {
+    margin: 10px auto 45px;
+    color: rgba(255,255,255,.7);
+}
+
+.sobre {
+    position: relative;
+    width: min(520px, 90%);
+    height: 310px;
+    margin: 0 auto;
+    border-radius: 22px;
+    background: linear-gradient(
+        145deg,
+        #25245f,
+        #151432
+    );
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.45),
+        0 0 35px rgba(120,90,255,.18);
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.12);
+}
+
+.sobre-tapa {
+    position: absolute;
+    inset: 0;
+    background: #35328a;
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        50% 58%
+    );
+    z-index: 4;
+}
+
+.sobre-frente {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 35px;
+}
+
+.sobre-frente p {
+    margin: 5px 0;
+    font-size: .75rem;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,.6);
+}
+
+.sobre-frente h3 {
+    margin: 5px 0;
+    font-family: "Fredoka", sans-serif;
+    font-size: 2.5rem;
+}
+
+.sobre-frente span {
+    font-size: .85rem;
+    color: rgba(255,255,255,.55);
+}
+
+.sello {
+    width: 58px;
+    height: 58px;
+    margin-bottom: 5px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #17152f;
+    border: 2px solid rgba(255,207,74,.6);
+    font-size: 1.7rem;
+    box-shadow: 0 0 25px rgba(255,207,74,.18);
+}
+
+.boton-carta {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 8;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    background: #ffcf4a;
+    color: #17152f;
+    font-family: "Fredoka", sans-serif;
+    font-size: .95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.boton-carta:hover {
+    transform: translateX(-50%) translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255,207,74,.2);
+}
+
+.carta-interior {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition:
+        max-height 1s ease,
+        opacity .6s ease,
+        margin .8s ease;
+}
+
+.carta-seccion.abierta .carta-interior {
+    max-height: 1500px;
+    opacity: 1;
+    margin-top: 45px;
+}
+
+.papel-carta {
+    width: min(700px, 100%);
+    margin: auto;
+    padding: 45px 45px 50px;
+    border-radius: 22px;
+    background: #f7f3ff;
+    color: #25213c;
+    text-align: left;
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.35),
+        0 0 35px rgba(160,120,255,.12);
+    animation: aparecerCarta .8s ease;
+}
+
+@keyframes aparecerCarta {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.papel-estrellas {
+    text-align: center;
+    color: #7565b8;
+    font-size: 1.2rem;
+    letter-spacing: 8px;
+    margin-bottom: 25px;
+}
+
+.saludo-carta {
+    font-family: "Fredoka", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #38305f;
+}
+
+.papel-carta p {
+    line-height: 1.8;
+    font-size: 1rem;
+    margin: 18px 0;
+}
+
+.lista-carta {
+    padding: 18px 22px;
+    margin: 20px 0;
+    border-radius: 15px;
+    background: #ece7ff;
+    line-height: 2;
+    font-weight: 600;
+}
+
+.frase-carta {
+    margin: 25px 0;
+    padding: 20px;
+    border-left: 4px solid #7565b8;
+    background: #eeeaff;
+    border-radius: 0 12px 12px 0;
+    font-weight: 700;
+    font-style: italic;
+    color: #4a4078;
+}
+
+.final-carta {
+    margin-top: 30px;
+    text-align: center;
+    padding: 25px;
+    border-radius: 18px;
+    background: #25204a;
+    color: white;
+}
+
+.final-carta span {
+    color: #ffcf4a;
+    font-family: "Fredoka", sans-serif;
+    font-size: 1.25rem;
+}
+
+.firma-carta {
+    margin-top: 35px !important;
+    text-align: center;
+    color: #554d73;
+}
+
+.firma-carta strong {
+    display: block;
+    margin-top: 8px;
+    color: #30294e;
+}
+
+
+/* =====================================================
+   GALERÍA
+===================================================== */
+
+.galeria {
+    width: min(1050px, calc(100% - 40px));
+    margin: auto;
+    padding: 100px 0;
+}
+
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 100px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1s ease;
+}
+
+.titulo-seccion.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.titulo-seccion > span {
+    color: #ffcf4a;
+    letter-spacing: 10px;
+}
+
+.titulo-seccion h2 {
+    line-height: 1.05;
+}
+
+.titulo-seccion p {
+    color: rgba(255,255,255,.5);
+}
+
+.foto-card {
+    position: relative;
+    min-height: 600px;
+    margin-bottom: 100px;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1s ease;
+}
+
+.foto-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.foto-card img {
+    cursor: pointer;
+    transition: .4s ease;
+}
+
+.foto-card img:hover {
+    transform: scale(1.03);
+}
+
+.foto-uno {
+    justify-content: center;
+}
+
+.numero {
+    position: absolute;
+    top: 20px;
+    left: 5%;
+    color: rgba(255,255,255,.2);
+    font-size: 5rem;
+    font-family: "Fredoka", sans-serif;
+}
+
+.orbita-foto {
+    position: absolute;
+    width: 430px;
+    height: 180px;
+    border: 1px solid rgba(115,180,255,.3);
+    border-radius: 50%;
+    transform: rotate(-20deg);
+}
+
+.marco-circular {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    padding: 8px;
+    background: linear-gradient(
+        135deg,
+        #7669ff,
+        #46bfff,
+        #e75ca9
+    );
+    box-shadow: 0 0 60px rgba(104,100,255,.25);
+}
+
+.marco-circular img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.foto-dos {
+    justify-content: center;
+}
+
+.polaroid {
+    position: relative;
+    width: 370px;
+    padding: 20px 20px 35px;
+    background: #f8f5ff;
+    color: #25213c;
+    transform: rotate(-3deg);
+    box-shadow: 0 25px 70px rgba(0,0,0,.35);
+}
+
+.polaroid img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.polaroid p {
+    padding-top: 15px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.polaroid-estrellas {
+    padding-bottom: 12px;
+    color: #6757aa;
+    text-align: center;
+}
+
+.gatito-card {
+    position: absolute;
+    left: 12%;
+    top: 12%;
+    font-size: 45px;
+    z-index: 2;
+}
+
+.estrella-card {
+    position: absolute;
+    right: 14%;
+    top: 20%;
+    font-size: 40px;
+}
+
+.planeta-card {
+    position: absolute;
+    right: 12%;
+    bottom: 15%;
+    font-size: 42px;
+}
+
+.foto-tres {
+    justify-content: center;
+}
+
+.constelacion {
+    position: absolute;
+    top: 5%;
+    right: 15%;
+    display: flex;
+    gap: 12px;
+    color: #b9b1ff;
+    font-size: 25px;
+}
+
+.foto-galaxia-fondo {
+    position: absolute;
+    width: 520px;
+    height: 300px;
+    border-radius: 50%;
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(113,83,255,.35),
+            transparent 70%
+        );
+    filter: blur(20px);
+}
+
+.foto-grande {
+    position: relative;
+    width: min(650px, 90%);
+    border-radius: 25px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.15);
+    box-shadow: 0 30px 80px rgba(0,0,0,.4);
+}
+
+.foto-grande img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+.texto-foto {
+    margin-left: 30px;
+    max-width: 280px;
+}
+
+.texto-foto span,
+.final-texto span {
+    font-size: .7rem;
+    letter-spacing: 3px;
+    color: #8e82ff;
+}
+
+.texto-foto h3,
+.final-texto h3 {
+    margin-top: 8px;
+    font-family: "Fredoka", sans-serif;
+    font-size: 1.7rem;
+}
+
+.texto-foto p {
+    color: rgba(255,255,255,.6);
+}
+
+.foto-cuatro {
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.galaxia-anillo {
+    position: absolute;
+    width: 600px;
+    height: 200px;
+    border: 2px solid rgba(108,150,255,.2);
+    border-radius: 50%;
+    transform: rotate(-15deg);
+}
+
+.marco-gato {
+    position: relative;
+    width: 400px;
+    max-width: 90%;
+    padding: 10px;
+    border-radius: 30px;
+    background: linear-gradient(
+        135deg,
+        #4c43a8,
+        #e06bb0
+    );
+}
+
+.marco-gato img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 23px;
+}
+
+.etiqueta-gato {
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,.15);
+    background: rgba(255,255,255,.06);
+    color: #ffcf4a;
+    letter-spacing: 2px;
+}
+
+.foto-cinco {
+    justify-content: center;
+    flex-direction: column;
+}
+
+.caos-decorativo {
+    margin-bottom: 30px;
+    color: #a9a0ff;
+    letter-spacing: 8px;
+}
+
+.foto-caos {
+    position: relative;
+    width: min(620px, 90%);
+    padding: 15px;
+    border: 1px solid rgba(255,255,255,.12);
+    background: rgba(255,255,255,.04);
+    transform: rotate(1deg);
+}
+
+.foto-caos img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+.sticker {
+    position: absolute;
+    padding: 8px 13px;
+    border-radius: 12px;
+    background: #ffcf4a;
+    color: #24203c;
+    font-weight: 800;
+    box-shadow: 0 10px 25px rgba(0,0,0,.25);
+}
+
+.sticker-1 {
+    top: -18px;
+    left: -18px;
+    transform: rotate(-10deg);
+}
+
+.sticker-2 {
+    bottom: -15px;
+    right: 30px;
+    transform: rotate(8deg);
+}
+
+.sticker-3 {
+    top: 25px;
+    right: -15px;
+    background: #7f71ff;
+    color: white;
+}
+
+.caption-caos {
+    margin-top: 30px;
+    color: #ffcf4a;
+    font-family: "Fredoka", sans-serif;
+    letter-spacing: 3px;
+}
+
+.foto-seis {
+    justify-content: center;
+    gap: 50px;
+}
+
+.final-marco {
+    position: relative;
+    width: min(500px, 90%);
+    padding: 8px;
+    border-radius: 28px;
+    background: linear-gradient(
+        135deg,
+        #ffcf4a,
+        #8b70ff,
+        #56c7ff
+    );
+}
+
+.final-marco img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 22px;
+}
+
+.brillo {
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    color: #ffcf4a;
+    font-size: 35px;
+}
+
+.brillo.segundo {
+    top: auto;
+    right: auto;
+    bottom: -20px;
+    left: 20px;
+}
+
+.final-texto {
+    max-width: 280px;
+}
+
+
+/* =====================================================
+   MENSAJE
+===================================================== */
+
+.mensaje {
+    position: relative;
+    width: 100%;
+    padding: 120px 20px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.mensaje-galaxia {
+    position: absolute;
+    width: 800px;
+    height: 400px;
+    border-radius: 50%;
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(105,77,255,.2),
+            transparent 70%
+        );
+    filter: blur(30px);
+}
+
+.mensaje-caja {
+    position: relative;
+    width: min(750px, 100%);
+    padding: 60px 40px;
+    border-radius: 30px;
+    text-align: center;
+    background: rgba(15,14,46,.7);
+    border: 1px solid rgba(255,255,255,.1);
+    backdrop-filter: blur(12px);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1s ease;
+}
+
+.mensaje-caja.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mini-estrellas {
+    color: #ffcf4a;
+    letter-spacing: 8px;
+}
+
+.mensaje-caja h2 span {
+    color: #78bfff;
+}
+
+.mensaje-caja > p:not(.etiqueta) {
+    max-width: 600px;
+    margin: 20px auto;
+    color: rgba(255,255,255,.7);
+    line-height: 1.8;
+}
+
+.firma {
+    margin-top: 35px;
+    color: rgba(255,255,255,.6);
+}
+
+.firma strong {
+    display: block;
+    margin-top: 5px;
+    color: #ffcf4a;
+    font-size: 1.4rem;
+}
+
+
+/* =====================================================
+   FINAL
+===================================================== */
+
+.final {
+    min-height: 650px;
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.universo-final {
+    position: relative;
+    width: 260px;
+    height: 200px;
+    margin-bottom: 30px;
+}
+
+.galaxia-final-fondo {
+    position: absolute;
+    inset: 30px 0;
+    border-radius: 50%;
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(113,82,255,.3),
+            transparent 70%
+        );
+    filter: blur(15px);
+}
+
+.final-luna {
+    position: absolute;
+    left: 40px;
+    top: 35px;
+    color: rgba(255,255,255,.7);
+    font-size: 70px;
+}
+
+.final-planeta {
+    position: absolute;
+    right: 35px;
+    bottom: 35px;
+    font-size: 45px;
+}
+
+.final > p {
+    font-size: .7rem;
+    letter-spacing: 4px;
+    color: #8e82ff;
+}
+
+.final h2 {
+    margin: 15px 0;
+    font-family: "Fredoka", sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.fecha-final {
+    color: rgba(255,255,255,.45);
+    letter-spacing: 4px;
+}
+
+.despedida {
+    margin-top: 25px;
+    color: #ffcf4a;
+    font-size: 1.1rem;
+}
+
+
+/* =====================================================
+   VISOR DE FOTOS
+===================================================== */
+
+.visor {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background: rgba(2,2,10,.92);
+    backdrop-filter: blur(12px);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s ease;
+}
+
+.visor.activo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.visor img {
+    max-width: min(1000px, 95vw);
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 0 25px 80px rgba(0,0,0,.6);
+}
+
+.cerrar {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 45px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .foto-card {
+        min-height: auto;
+        margin-bottom: 100px;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .texto-foto {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .foto-dos {
+        min-height: 550px;
+    }
+
+    .foto-seis {
+        gap: 30px;
+    }
+
+    .numero {
+        left: 0;
+        top: -30px;
+    }
+
+    .orbita-foto {
+        width: 330px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .tarjeta-portada {
+        padding: 45px 20px;
+    }
+
+    .pequeno {
+        font-size: .65rem;
+        letter-spacing: 3px;
+    }
+
+    .apodo {
+        font-size: .8rem;
+    }
+
+    .presentacion {
+        padding: 80px 10px;
+    }
+
+    .galeria {
+        width: calc(100% - 30px);
+    }
+
+    .marco-circular {
+        width: 290px;
+        height: 290px;
+    }
+
+    .polaroid {
+        width: 300px;
+    }
+
+    .foto-grande {
+        width: 100%;
+    }
+
+    .marco-gato {
+        width: 100%;
+    }
+
+    .foto-caos {
+        width: 100%;
+    }
+
+    .mensaje-caja {
+        padding: 45px 22px;
+    }
+
+    .carta-seccion {
+        padding: 80px 15px 100px;
+    }
+
+    .sobre {
+        width: 100%;
+        height: 285px;
+    }
+
+    .papel-carta {
+        padding: 30px 22px 35px;
+    }
+
+    .papel-carta p {
+        font-size: .95rem;
+    }
+
+    .sobre-frente h3 {
+        font-size: 2rem;
+    }
+
+    .luna-1 {
+        right: 2%;
+        font-size: 55px;
+    }
+
+    .luna-2 {
+        left: 2%;
+        font-size: 40px;
+    }
+
+    .musica-control {
+        right: 12px;
+        bottom: 12px;
+        padding: 8px 9px 8px 11px;
+        gap: 8px;
+    }
+
+    .musica-info strong {
+        font-size: .62rem;
+    }
+
+    .musica-info span {
+        font-size: .58rem;
+    }
+
+    .musica-icono {
+        width: 31px;
+        height: 31px;
+        font-size: 16px;
+    }
+
+    .boton-musica {
+        width: 35px;
+        height: 35px;
+    }
+
+}
