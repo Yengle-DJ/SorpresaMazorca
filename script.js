@@ -10,8 +10,7 @@
 
 function entrarAlUniverso() {
 
-    const historia =
-        document.getElementById("historia");
+    const historia = document.getElementById("historia");
 
     if (historia) {
 
@@ -21,15 +20,12 @@ function entrarAlUniverso() {
 
     }
 
-    const musica =
-        document.getElementById("musica");
+    const musica = document.getElementById("musica");
 
     if (musica && musica.paused) {
 
         musica.play().catch(function () {
-
             // El navegador puede bloquear el autoplay
-
         });
 
     }
@@ -43,77 +39,27 @@ function entrarAlUniverso() {
 
 function abrirCarta() {
 
-    const carta =
-        document.getElementById("carta");
+    const carta = document.getElementById("carta");
+    const boton = document.querySelector(".boton-carta");
 
-    const boton =
-        document.querySelector(".boton-carta");
-
-    const interior =
-        document.getElementById("cartaInterior");
-
-
-    if (!carta || !boton || !interior) {
+    if (!carta || !boton) {
         return;
     }
 
-
-    const abierta =
-        carta.classList.contains("abierta");
+    const abierta = carta.classList.contains("abierta");
 
 
     if (!abierta) {
 
         carta.classList.add("abierta");
 
-        boton.textContent =
-            "cerrar carta ✦";
-
-
-        /*
-         * Primero ponemos la altura en 0.
-         */
-
-        interior.style.maxHeight = "0px";
-
-
-        /*
-         * Esperamos un momento y calculamos
-         * la altura REAL del contenido.
-         */
-
-        requestAnimationFrame(function () {
-
-            interior.style.maxHeight =
-                interior.scrollHeight + "px";
-
-        });
-
+        boton.textContent = "cerrar carta ✦";
 
     } else {
 
-
-        /*
-         * Volvemos a calcular la altura
-         * antes de comenzar a cerrar.
-         */
-
-        interior.style.maxHeight =
-            interior.scrollHeight + "px";
-
-
-        requestAnimationFrame(function () {
-
-            interior.style.maxHeight =
-                "0px";
-
-        });
-
-
         carta.classList.remove("abierta");
 
-        boton.textContent =
-            "abrir carta ✉";
+        boton.textContent = "abrir carta ✉";
 
     }
 
@@ -121,41 +67,11 @@ function abrirCarta() {
 
 
 /* =====================================================
-   AJUSTAR CARTA AL CAMBIAR TAMAÑO
-===================================================== */
-
-window.addEventListener("resize", function () {
-
-    const carta =
-        document.getElementById("carta");
-
-    const interior =
-        document.getElementById("cartaInterior");
-
-
-    if (
-        carta &&
-        interior &&
-        carta.classList.contains("abierta")
-    ) {
-
-        interior.style.maxHeight =
-            interior.scrollHeight + "px";
-
-    }
-
-});
-
-
-/* =====================================================
    VISOR DE FOTOS
 ===================================================== */
 
-const visor =
-    document.getElementById("visor");
-
-const fotoGrande =
-    document.getElementById("fotoGrande");
+const visor = document.getElementById("visor");
+const fotoGrande = document.getElementById("fotoGrande");
 
 
 function abrirFoto(imagen) {
@@ -164,13 +80,11 @@ function abrirFoto(imagen) {
         return;
     }
 
-    fotoGrande.src =
-        imagen.src;
+    fotoGrande.src = imagen.src;
 
     visor.classList.add("activo");
 
-    document.body.style.overflow =
-        "hidden";
+    document.body.style.overflow = "hidden";
 
 }
 
@@ -183,8 +97,7 @@ function cerrarFoto() {
 
     visor.classList.remove("activo");
 
-    document.body.style.overflow =
-        "";
+    document.body.style.overflow = "";
 
 }
 
@@ -193,18 +106,15 @@ function cerrarFoto() {
    CERRAR FOTO CON ESCAPE
 ===================================================== */
 
-document.addEventListener(
-    "keydown",
-    function (event) {
+document.addEventListener("keydown", function (event) {
 
-        if (event.key === "Escape") {
+    if (event.key === "Escape") {
 
-            cerrarFoto();
-
-        }
+        cerrarFoto();
 
     }
-);
+
+});
 
 
 /* =====================================================
@@ -213,18 +123,15 @@ document.addEventListener(
 
 if (visor) {
 
-    visor.addEventListener(
-        "click",
-        function (event) {
+    visor.addEventListener("click", function (event) {
 
-            if (event.target === visor) {
+        if (event.target === visor) {
 
-                cerrarFoto();
-
-            }
+            cerrarFoto();
 
         }
-    );
+
+    });
 
 }
 
@@ -233,59 +140,49 @@ if (visor) {
    ANIMACIONES AL HACER SCROLL
 ===================================================== */
 
-const elementos =
-    document.querySelectorAll(
-        ".foto-card, .presentacion, .mensaje-caja, .titulo-seccion"
-    );
+const elementos = document.querySelectorAll(
+    ".foto-card, .presentacion, .mensaje-caja, .titulo-seccion"
+);
 
 
 if ("IntersectionObserver" in window) {
 
-    const observador =
-        new IntersectionObserver(
-            function (entradas) {
+    const observador = new IntersectionObserver(
 
-                entradas.forEach(
-                    function (entrada) {
+        function (entradas) {
 
-                        if (entrada.isIntersecting) {
+            entradas.forEach(function (entrada) {
 
-                            entrada.target
-                                .classList
-                                .add("visible");
+                if (entrada.isIntersecting) {
 
-                        }
+                    entrada.target.classList.add("visible");
 
-                    }
-                );
+                }
 
-            },
-            {
-                threshold: 0.12
-            }
-        );
+            });
 
+        },
 
-    elementos.forEach(
-        function (elemento) {
-
-            observador.observe(elemento);
-
+        {
+            threshold: 0.12
         }
+
     );
 
+
+    elementos.forEach(function (elemento) {
+
+        observador.observe(elemento);
+
+    });
 
 } else {
 
-    elementos.forEach(
-        function (elemento) {
+    elementos.forEach(function (elemento) {
 
-            elemento.classList.add(
-                "visible"
-            );
+        elemento.classList.add("visible");
 
-        }
-    );
+    });
 
 }
 
@@ -294,80 +191,55 @@ if ("IntersectionObserver" in window) {
    EFECTO DE LAS FOTOS
 ===================================================== */
 
-const fotos =
-    document.querySelectorAll(
-        ".foto-card img"
-    );
+const fotos = document.querySelectorAll(".foto-card img");
 
 
-fotos.forEach(
-    function (foto) {
+fotos.forEach(function (foto) {
 
-        foto.addEventListener(
-            "mouseenter",
-            function () {
+    foto.addEventListener("mouseenter", function () {
 
-                foto.style.filter =
-                    "brightness(1.08)";
+        foto.style.filter = "brightness(1.08)";
 
-            }
-        );
+    });
 
 
-        foto.addEventListener(
-            "mouseleave",
-            function () {
+    foto.addEventListener("mouseleave", function () {
 
-                foto.style.filter =
-                    "brightness(1)";
+        foto.style.filter = "brightness(1)";
 
-            }
-        );
+    });
 
-    }
-);
+});
 
 
 /* =====================================================
    MOVIMIENTO DE PLANETAS
 ===================================================== */
 
-document.addEventListener(
-    "mousemove",
-    function (event) {
+document.addEventListener("mousemove", function (event) {
 
-        const x =
-            event.clientX /
-            window.innerWidth -
-            0.5;
+    const x =
+        event.clientX / window.innerWidth - 0.5;
 
-        const y =
-            event.clientY /
-            window.innerHeight -
-            0.5;
+    const y =
+        event.clientY / window.innerHeight - 0.5;
 
 
-        const planetas =
-            document.querySelectorAll(
-                ".planeta"
-            );
+    const planetas =
+        document.querySelectorAll(".planeta");
 
 
-        planetas.forEach(
-            function (elemento, index) {
+    planetas.forEach(function (elemento, index) {
 
-                const velocidad =
-                    (index + 1) * 3;
+        const velocidad =
+            (index + 1) * 3;
 
+        elemento.style.transform =
+            `translate(${x * velocidad}px, ${y * velocidad}px)`;
 
-                elemento.style.transform =
-                    `translate(${x * velocidad}px, ${y * velocidad}px)`;
+    });
 
-            }
-        );
-
-    }
-);
+});
 
 
 /* =====================================================
@@ -378,14 +250,10 @@ const musica =
     document.getElementById("musica");
 
 const reproductorMusica =
-    document.getElementById(
-        "reproductorMusica"
-    );
+    document.getElementById("reproductorMusica");
 
 const botonMusica =
-    document.getElementById(
-        "botonMusica"
-    );
+    document.getElementById("botonMusica");
 
 
 if (musica) {
@@ -394,6 +262,10 @@ if (musica) {
 
 }
 
+
+/* =====================================================
+   ACTUALIZAR REPRODUCTOR
+===================================================== */
 
 function actualizarReproductor() {
 
@@ -410,49 +282,53 @@ function actualizarReproductor() {
 
     if (musica.paused) {
 
-        reproductorMusica
-            .classList
-            .remove("reproduciendo");
+        reproductorMusica.classList.remove(
+            "reproduciendo"
+        );
 
-        botonMusica.textContent =
-            "▶";
-
+        botonMusica.textContent = "▶";
 
     } else {
 
-        reproductorMusica
-            .classList
-            .add("reproduciendo");
+        reproductorMusica.classList.add(
+            "reproduciendo"
+        );
 
-        botonMusica.textContent =
-            "❚❚";
+        botonMusica.textContent = "❚❚";
 
     }
 
 }
 
 
+/* =====================================================
+   ALTERNAR MÚSICA
+===================================================== */
+
 function alternarMusica() {
 
     if (!musica) {
+
         return;
+
     }
 
 
     if (musica.paused) {
 
         musica.play()
+
             .then(function () {
 
                 actualizarReproductor();
 
             })
+
             .catch(function () {
 
                 actualizarReproductor();
 
             });
-
 
     } else {
 
@@ -464,6 +340,10 @@ function alternarMusica() {
 
 }
 
+
+/* =====================================================
+   EVENTOS DE MÚSICA
+===================================================== */
 
 if (musica) {
 
